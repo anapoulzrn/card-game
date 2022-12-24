@@ -42,6 +42,15 @@ body {
     justify-content: center;
 }
 
+
+.level:hover{
+    box-shadow: 5px 5px 5px;
+}
+
+.level__active{
+    box-shadow: 5px 5px 5px;
+}
+
 .caption__main {
     color: #004980;
     font-size: 40px;
@@ -67,4 +76,8 @@ body {
     font-size: 24px;
     line-height: 32px;
     color: #FFFFFF;
+}
+
+.levels__btn:hover {
+    box-shadow: 5px 5px 5px #185f95;
 }

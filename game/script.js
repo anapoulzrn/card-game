@@ -1,6 +1,7 @@
 window.application = {
   blocks: {},
   screens: {},
+  levels: ['1', '2', '3'],
   // timers: [],
   renderScreen: function (screenName) {
     // window.application.timers.forEach(id => {

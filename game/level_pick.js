@@ -16,10 +16,18 @@ function renderLevelsBlock(container) {
     level_3.classList.add('level');
     level_3.textContent = '3';
     levels__box.appendChild(level_3);
-
     const button = document.createElement('button');
     button.classList.add('levels__btn');
     button.textContent = 'Старт';
+
+    button.addEventListener('click', () => {
+        if (!window.application.level) {
+            console.warn('Выберите уровень');
+        } else {
+            console.log('переход на экран игры');
+            window.application.renderScreen('game');
+        }
+    })
 
     container.appendChild(levels__box);
     container.appendChild(button);
@@ -38,7 +46,26 @@ function renderLevelsScreen() {
 
     window.application.renderBlock('levelsBlock', levels);
     app.appendChild(levels);
+    pickingLevel();
+
 }
 
 window.application.screens['levels'] = renderLevelsScreen;
 window.application.renderScreen('levels');
+
+function pickingLevel() {
+    const levels__box = document.querySelector('.levels__box');
+    const levelsArr = document.querySelectorAll('.level');
+
+    levels__box.addEventListener('click', (event) => {
+        levelsArr.forEach(level => {
+            level.classList.remove('level__active');
+        });
+
+        let activeLevel = event.target;
+        activeLevel.classList.add('level__active');
+        window.application.level = activeLevel.textContent;
+        console.log(window.application.level);
+    });
+}
+
