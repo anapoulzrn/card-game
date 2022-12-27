@@ -1,5 +1,5 @@
 function renderGameBlock(container) {
-
+    console.log(container);
 }
 
 window.application.blocks['gameBlock'] = renderGameBlock;

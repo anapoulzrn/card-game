@@ -27,7 +27,7 @@ function renderLevelsBlock(container) {
             console.log('переход на экран игры');
             window.application.renderScreen('game');
         }
-    })
+    });
 
     container.appendChild(levels__box);
     container.appendChild(button);
@@ -45,9 +45,9 @@ function renderLevelsScreen() {
     levels.appendChild(caption);
 
     window.application.renderBlock('levelsBlock', levels);
+    // eslint-disable-next-line no-undef
     app.appendChild(levels);
     pickingLevel();
-
 }
 
 window.application.screens['levels'] = renderLevelsScreen;
@@ -58,7 +58,7 @@ function pickingLevel() {
     const levelsArr = document.querySelectorAll('.level');
 
     levels__box.addEventListener('click', (event) => {
-        levelsArr.forEach(level => {
+        levelsArr.forEach((level) => {
             level.classList.remove('level__active');
         });
 
@@ -68,4 +68,3 @@ function pickingLevel() {
         console.log(window.application.level);
     });
 }
-
