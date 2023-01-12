@@ -1,0 +1,152 @@
+/* stylelint-disable prettier/prettier */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: StratosSkyeng, sans-serif;
+    background-color: #004980;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 150px;
+}
+
+.levels {
+    width: 480px;
+    height: 459px;
+    background-color: #c2f5ff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.levels-box {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.level {
+    height: 98px;
+    width: 98px;
+    background-color: #fff;
+    border-radius: 12px;
+    color: #0080c1;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 72px;
+    letter-spacing: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.level:hover {
+    box-shadow: 5px 5px 5px;
+}
+
+.level-active {
+    box-shadow: 5px 5px 5px;
+}
+
+.caption-main {
+    color: #004980;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0;
+    text-align: center;
+    width: 208px;
+    padding-bottom: 22px;
+    padding-top: 26px;
+}
+
+.levels-btn {
+    width: 246px;
+    height: 50px;
+    left: 389px;
+    top: 519px;
+    background: #7ac100;
+    border-radius: 12px;
+    border: none;
+    margin-top: 67px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #fff;
+}
+
+.levels-btn:hover {
+    box-shadow: 5px 5px 5px #185f95;
+}
+
+.cards-box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 975px;
+    justify-content: center;
+    gap: 15px;
+}
+
+.card-item {
+    width: 95px;
+    height: 133px;
+}
+
+.upper-game-block {
+    display: flex;
+    flex-direction: row;
+    width: 975px;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 35px;
+}
+
+.timer-items{
+    display: flex;
+    flex-direction: column;
+}
+
+.time-items {
+    display: flex;
+    flex-direction: row;
+    gap: 57px;
+    position: absolute;
+    width: 26px;
+    height: 32px;
+    left: 296px;
+    top: 12px;
+}
+
+.timer-box{
+    height: 92px;
+    width: 156px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.timer {
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 72px;
+    text-align: left;
+    color: #fff;
+    position: absolute;
+    top: 10px;
+
+}
+
+.timer-item {
+    font-size: 16px;
+    line-height: 32px;
+    color: #fff;
+    font-style: normal;
+    font-weight: 400;
+}
