@@ -63,8 +63,12 @@ function pickingLevel() {
         });
 
         let activeLevel = event.target;
-        activeLevel.classList.add('level-active');
-        window.application.level = activeLevel.textContent;
-        console.log(window.application.level);
+        if (activeLevel.classList.contains('levels-box')) {
+            activeLevel.classList.remove('level-active');
+        } else {
+            activeLevel.classList.add('level-active');
+            window.application.level = activeLevel.textContent;
+            console.log(window.application.level);
+        }
     });
 }
