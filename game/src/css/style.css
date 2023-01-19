@@ -88,7 +88,7 @@ body {
 .cards-box{
     display: flex;
     flex-wrap: wrap;
-    width: 975px;
+    width: 645px;
     justify-content: center;
     gap: 15px;
 }

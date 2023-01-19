@@ -5,8 +5,9 @@
         "node": true
     },
 
-    "extends":["eslint: recommended", "prettier"],
+    "extends":["eslint:recommended", "prettier"],
     "plugins": ["prettier"],
+    // "parser": "@babel/eslint-parser",
     "parserOptions": {
         "ecmaVersion": 2020
     },
