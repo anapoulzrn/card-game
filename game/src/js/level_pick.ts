@@ -1,4 +1,7 @@
-function renderLevelsBlock(container) {
+import { app } from './render';
+console.log('level pick');
+
+function renderLevelsBlock(container: HTMLElement) {
     const levelsBox = document.createElement('div');
     levelsBox.classList.add('levels-box');
 
@@ -24,7 +27,6 @@ function renderLevelsBlock(container) {
         if (!window.application.level) {
             console.warn('Выберите уровень');
         } else {
-            console.log('переход на экран игры');
             window.application.renderScreen('game');
         }
     });
@@ -36,6 +38,13 @@ function renderLevelsBlock(container) {
 window.application.blocks['levelsBlock'] = renderLevelsBlock;
 
 function renderLevelsScreen() {
+    app!.setAttribute('style', 'padding: 145px');
+
+    if (window.application.interval) {
+        const interval = window.application.interval;
+        clearInterval(interval);
+    }
+
     const levels = document.createElement('div');
     levels.classList.add('levels');
 
@@ -46,29 +55,28 @@ function renderLevelsScreen() {
 
     window.application.renderBlock('levelsBlock', levels);
     // eslint-disable-next-line no-undef
-    app.appendChild(levels);
+    app!.appendChild(levels);
     pickingLevel();
+
+    function pickingLevel() {
+        const levelsBox = document.querySelector('.levels-box');
+        const levelsArr = document.querySelectorAll('.level');
+
+        levelsBox!.addEventListener('click', (event) => {
+            levelsArr.forEach((level) => {
+                level.classList.remove('level-active');
+            });
+
+            let activeLevel = event.target as HTMLElement;
+            if (activeLevel.classList.contains('levels-box')) {
+                activeLevel.classList.remove('level-active');
+            } else {
+                activeLevel.classList.add('level-active');
+                window.application.level = activeLevel!.textContent;
+            }
+        });
+    }
 }
 
 window.application.screens['levels'] = renderLevelsScreen;
 window.application.renderScreen('levels');
-
-function pickingLevel() {
-    const levelsBox = document.querySelector('.levels-box');
-    const levelsArr = document.querySelectorAll('.level');
-
-    levelsBox.addEventListener('click', (event) => {
-        levelsArr.forEach((level) => {
-            level.classList.remove('level-active');
-        });
-
-        let activeLevel = event.target;
-        if (activeLevel.classList.contains('levels-box')) {
-            activeLevel.classList.remove('level-active');
-        } else {
-            activeLevel.classList.add('level-active');
-            window.application.level = activeLevel.textContent;
-            console.log(window.application.level);
-        }
-    });
-}
